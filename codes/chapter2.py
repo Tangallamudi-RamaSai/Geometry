@@ -24,9 +24,9 @@ import shlex
 #end if
 
 #Triangle vertices
-A = np.array([1,-1]).reshape(-1,1)
-B = np.array([-4,6]).reshape(-1,1) 
-C = np.array([-3,-5]).reshape(-1,1) 
+A = np.array([-3,0]).reshape(-1,1)
+B = np.array([4,2]).reshape(-1,1) 
+C = np.array([1,4]).reshape(-1,1) 
 
 #Triangle  mid points
 D = (B+C)/2
