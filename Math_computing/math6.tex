@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{array}
+\usepackage[column=0]{cellspace}
+\setlength\cellspacetoplimit{6pt}
+\setlength\cellspacebottomlimit{6pt}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{gensymb}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\let\vec\mathbf
+
+\title{MathConstruction}
+
+\begin{document}
+
+\section{NCERT 12.10.5.9}
+
+Find the position vector of a point R which divides the line joining two points P and Q whose Position Vectors are $2\vec{a}+\vec{b}$ and $\vec{a}-3\vec{b}$ externally in the ratio $1:2$.Also, Show that P is the mid point of the line segment QR  \\
+\textbf{Solution:}
+The coordinates and ratio are given as
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Symbol} & \textbf{Value} \\
+        \hline
+        $\vec{A}$ & $2\vec{a}+\vec{b}$ \\
+        \hline
+        $\vec{B}$ & $\vec{a}-3\vec{b}$ \\
+        \hline
+        k & $2$ \\
+        \hline
+    \end{tabular}
+    \label{tab:mytable}
+\end{table}
+Using section formula
+\begin{align}
+    \vec{C}=\frac{\vec{B}-k.\vec{A}}{1-k}\\
+    \vec{C}=\frac{(\vec{a}-3\vec{b})-2(2\vec{a}+\vec{b})}{1-2}\\
+    \vec{C}=3\vec{a}+5\vec{b}
+\end{align}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Symbol} & \textbf{Value}  \\
+        \hline
+        $\vec{C}$ & $3\vec{a}+5\vec{b}$  \\
+        \hline
+    \end{tabular}
+    \label{tab:mytable}
+\end{table}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{/sdcard/geometry/math_computing/mathconstruction-3.png}
+    \caption{point vectors A,B,C}
+    \label{fig:enter-label}
+\end{figure}
+\end{document}
