@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0,'/home/ramsai/MathComputing/codes/CoordGeo') #for path to external scripts
 import numpy as np
 import matplotlib.pyplot as plt
 
