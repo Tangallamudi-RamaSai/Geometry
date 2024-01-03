@@ -35,6 +35,11 @@ plt.plot([x_P, x_Q], [y_P, y_Q], label='PQ', linestyle='-')
 # Connecting Q to R with a dotted line
 plt.plot([x_Q, x_R], [y_Q, y_R], label='QR', linestyle='--')
 
+# Marking points P, Q, R on the lines with labels
+plt.text(x_P, y_P, 'P', ha='right', va='bottom')
+plt.text(x_Q, y_Q, 'Q', ha='right', va='top')
+plt.text(x_R, y_R, 'R', ha='left', va='top')
+
 # Print values for P, Q, R
 print("P:", P.flatten())
 print("Q:", Q.flatten())
