@@ -3,42 +3,38 @@ sys.path.insert(0,'/home/ramsai/MathComputing/codes/CoordGeo') #for path to exte
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Taking user input for matrix a
-a_values = input("value of a: ")
-a = np.array([float(x) for x in a_values.split(',')]).reshape((2, 1))
+# Function to read matrix from file
+def read_file(filename):
+    with open(filename, 'r') as file:
+        values = file.readline().strip().split(',')
+    return np.array([float(x) for x in values])
 
-# Taking user input for matrix b
-b_values = input("value of b: ")
-b = np.array([float(x) for x in b_values.split(',')]).reshape((2, 1))
+# Reading matrices a and b from .dat files
+a = read_file('a.dat').reshape((2, 1))
+b = read_file('b.dat').reshape((2, 1))
 
 # Specifying the value of k
 k = 2
 
 # Calculating P, Q, and R
-P = 2*a + b
-Q = a - 3*b
-R = ((a - 3*b) - k*(2*a + b))/(1 - k)
-
-# Extracting x and y coordinates for P, Q, and R
-x_P, y_P = P.flatten()
-x_Q, y_Q = Q.flatten()
-x_R, y_R = R.flatten()
+P = 2 * a + b
+Q = a - 3 * b
+R = ((a - 3 * b) - k * (2 * a + b)) / (1 - k)
 
 # Plotting in 2D plane with lines
-plt.scatter(x_P, y_P, label='P', marker='o')
-plt.scatter(x_Q, y_Q, label='Q', marker='o')
-plt.scatter(x_R, y_R, label='R', marker='o')
+plt.scatter(*P, label='P', marker='o')
+plt.scatter(*Q, label='Q', marker='o')
+plt.scatter(*R, label='R', marker='o')
 
 # Connecting P to Q with a solid line
-plt.plot([x_P, x_Q], [y_P, y_Q], label='PQ', linestyle='-')
+plt.plot([P[0, 0], Q[0, 0]], [P[1, 0], Q[1, 0]], label='PQ', linestyle='-')
 
 # Connecting Q to R with a dotted line
-plt.plot([x_Q, x_R], [y_Q, y_R], label='QR', linestyle='--')
+plt.plot([Q[0, 0], R[0, 0]], [Q[1, 0], R[1, 0]], label='QR', linestyle='--')
 
 # Marking points P, Q, R on the lines with labels
-plt.text(x_P, y_P, 'P', ha='right', va='bottom')
-plt.text(x_Q, y_Q, 'Q', ha='right', va='top')
-plt.text(x_R, y_R, 'R', ha='left', va='top')
+for point, label in zip([P, Q, R], ['P', 'Q', 'R']):
+    plt.text(*point, label, ha='right' if label == 'P' else 'left', va='bottom' if label == 'P' else 'top')
 
 # Print values for P, Q, R
 print("P:", P.flatten())
