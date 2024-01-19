@@ -83,9 +83,9 @@ void setup() {
     Q = Matsub(A, Matscale(B, m, n, 3), m, n);
     R = Matscale(Matsub(Q,Matscale(P,m,n,k),m,n),m,n,1/(1-k));
 
-    String response = "Points P,Q,R: <br>" + String(P[0][0]) + ",-4.00" +
-                      "<br>" + String(Q[0][0]) + ",-9.00" +
-                      "<br>" + String(R[0][0]) + ",1.00" +
+    String response = "Points P,Q,R: <br>" + String(P[0][0]) + "," + String(P[0][1])+
+                      "<br>" + String(Q[0][0]) + "," + String(Q[0][1])+
+                      "<br>" + String(R[0][0]) + "," + String(R[0][1])+
                       "<br><a href=\"/\">Return to Home Page</a>";
 
     request->send(200, "text/html", response);
